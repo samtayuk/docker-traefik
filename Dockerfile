@@ -12,7 +12,7 @@ ADD *.sh $SERVICE_HOME/bin/
 
 # Download and install traefik
 RUN mkdir -p ${SERVICE_HOME}/bin ${SERVICE_HOME}/etc ${SERVICE_HOME}/log ${SERVICE_HOME}/certs ${SERVICE_HOME}/acme && \
-    apk --no-cache --no-progress add ca-certificates && \
+    apk --no-cache --no-progress add ca-certificates bash && \
     apk --no-cache --no-progress --virtual=.build-dependencies add wget && \
     wget -q "${SERVICE_RELEASE}" -O "${SERVICE_HOME}/bin/traefik" && \
     touch ${SERVICE_HOME}/etc/rules.toml && \
