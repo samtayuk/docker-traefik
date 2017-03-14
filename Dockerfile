@@ -26,4 +26,4 @@ WORKDIR $SERVICE_HOME
 
 ENTRYPOINT $SERVICE_HOME/bin/entrypoint.sh
 
-CMD ["$SERVICE_HOME/bin/traefik", "--configFile=$SERVICE_HOME/etc/traefik.toml"]
+CMD ["$SERVICE_HOME/bin/traefik", "--configfile=$SERVICE_HOME/etc/traefik.toml"]

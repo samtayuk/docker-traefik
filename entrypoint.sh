@@ -34,6 +34,8 @@ serviceCheck
 serviceLog
 serviceAccess
 
+log "[ run: $@ ]"
+
 # first arg is `-f` or `--some-option`
 if [ "${1#-}" != "$1" ]; then
     set -- traefik "$@"
