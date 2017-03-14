@@ -24,6 +24,6 @@ EXPOSE 80 443
 
 WORKDIR $SERVICE_HOME
 
-ENTRYPOINT $SERVICE_HOME/bin/entrypoint.sh
+ENTRYPOINT entrypoint.sh
 
-CMD ["$SERVICE_HOME/bin/traefik", "--configfile=$SERVICE_HOME/etc/traefik.toml"]
+CMD ["traefik", "--configfile=/app/traefik/etc/traefik.toml"]

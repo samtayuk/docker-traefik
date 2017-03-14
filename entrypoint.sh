@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -o pipefail
 
 function log {
         echo `date` $ME - $@
@@ -34,6 +34,6 @@ serviceCheck
 serviceLog
 serviceAccess
 
-log $@
+log "[ run: $@ ]"
 
 exec "$@"
