@@ -24,7 +24,6 @@ TRAEFIK_ENTRYPOINTS_HTTP="\
   address = \":${TRAEFIK_HTTP_PORT}\"
 "
 
-filelist=`ls -1 ${TRAEFIK_SSL_PATH}/*.key | cut -d"." -f1`
 RC=`echo $?`
 
 if [ $RC -eq 0 ]; then
@@ -32,15 +31,6 @@ if [ $RC -eq 0 ]; then
   [entryPoints.https]
   address = \":${TRAEFIK_HTTPS_PORT}\"
     [entryPoints.https.tls]"
-    for i in $filelist; do
-        if [ -f "$i.crt" ]; then
-            TRAEFIK_ENTRYPOINTS_HTTPS=$TRAEFIK_ENTRYPOINTS_HTTPS"
-      [[entryPoints.https.tls.certificates]]
-      certFile = \"${i}.crt\"
-      keyFile = \"${i}.key\"
-"
-        fi
-    done
 fi
 
 if [ "X${TRAEFIK_HTTPS_ENABLE}" == "Xtrue" ]; then
