@@ -34,6 +34,6 @@ serviceCheck
 serviceLog
 serviceAccess
 
-log "[ run: $@ ]"
+log $@
 
 exec "$@"
