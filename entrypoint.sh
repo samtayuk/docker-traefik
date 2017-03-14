@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-set -e
-
 function log {
         echo `date` $ME - $@
 }
