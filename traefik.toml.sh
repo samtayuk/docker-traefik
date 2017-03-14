@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 TRAEFIK_HTTP_PORT=${TRAEFIK_HTTP_PORT:-"80"}
 TRAEFIK_HTTPS_ENABLE=${TRAEFIK_HTTPS_ENABLE:-"false"}

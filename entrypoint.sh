@@ -1,4 +1,6 @@
-#!/usr/bin/env sh
+#!/bin/bash
+
+set -e
 
 function log {
         echo `date` $ME - $@
